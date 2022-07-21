@@ -1,41 +1,27 @@
-require('@babel/register');
+// require('@babel/register');
+
 const express = require('express');
-
-const app = express();
-const morgan = require('morgan');
-const expressConfig = require('./config/config');
 const { sequelize } = require('./db/models');
-
+const mainRouter = require('./routes/main.route');
+const orderRouter = require('./routes/orders.route');
+const config = require('./config/config');
+// const morgan = require("morgan");
+const app = express();
 const PORT = process.env.PORT ?? 3000;
 
-// функция настройки экспресса
-expressConfig(app);
+// Config
+config(app);
 
-const homeRoutes = require('./routes/home.routes')
-// подключаем роутеры
-app.use('/', homeRoutes);
+// Routing
+app.use('/', mainRouter);
+app.use('/orders', orderRouter);
 
-
-
-
-app.use((error, req, res, next) => {
-  console.error('Произошла ошибка', error);
-  res.status(500).json({
-    success: false,
-    message: 'Непредвиденная ошибка сервера, попробуйте зайти позже',
-  });
-});
-
+// Listen
 app.listen(PORT, async () => {
-  /* eslint-disable no-console */
-  console.log(`Веб-сервер слушает порт ${PORT}`);
-
   try {
+    console.log(`Server started at ${PORT} port`);
     await sequelize.authenticate();
-    console.log('БД-сервер подключен успешно');
   } catch (error) {
-    console.log('БД-сервер не подключен');
-    console.log(error.message);
+    console.error('Unable to connect to the database:', error);
   }
-  /* eslint-enable */
 });

@@ -1,28 +1,19 @@
 const React = require('react');
 
-function Layout({ children }) {
+function Layout({ title, children }) {
   return (
-    <html lang="ru">
+
+    <html lang="en">
       <head>
-        <meta charSet="utf-8" />
-        <title>Hello</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossOrigin="anonymous" />
-        <link rel="icon" type="image/x-icon" href="/theme/assets/favicon.ico" />
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossOrigin="anonymous" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <meta charSet="UTF-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <script defer src="/js/application.js" />
+        <script defer src="/js/bootstrap.bundle.min.js" />
+        <title>{title}</title>
       </head>
-      <body id="page-top">
-        <header className="masthead d-flex align-items-center">
-          <div className="container px-4 px-lg-5 text-center">
-            {children}
-          </div>
-        </header>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
