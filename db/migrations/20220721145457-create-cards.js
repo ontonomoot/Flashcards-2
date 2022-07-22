@@ -8,16 +8,24 @@ module.exports = {
         type: DataTypes.INTEGER,
       },
       questions: {
+        allowNull: false,
         type: DataTypes.TEXT,
       },
       answers: {
+        allowNull: false,
         type: DataTypes.TEXT,
       },
       score: {
+        allowNull: false,
         type: DataTypes.INTEGER,
       },
       id_categories: {
+        allowNull: false,
         type: DataTypes.INTEGER,
+        references: {
+          model: 'Categories',
+          key: 'id',
+        },
       },
       createdAt: {
         allowNull: false,
