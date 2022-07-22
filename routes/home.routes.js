@@ -6,7 +6,7 @@ const homeRoutes = require('express').Router();
 const Hello = require('../views/Hello');
 const Themes = require('../views/Themes');
 const Chosen = require('../views/Chosen');
-const { Categories } = require('../db/models/categories');
+const { Categories } = require('../db/models');
 
 homeRoutes.get('/', (req, res) => {
   res.renderComponent(Hello, { title: 'Бобро Пожаловать!', greetings: 'Как твоё имя, умник?' });
@@ -14,8 +14,8 @@ homeRoutes.get('/', (req, res) => {
 
 homeRoutes.post('/categories', async (req, res) => {
   // const user = req.body.player;
-  const themes = await Categories.findAll();
-  console.log(themes);
+  // const themes = await Categories.findAll();
+  // console.log(themes);
   const user = req.body.player;
 
   const main = React.createElement(Themes, {
