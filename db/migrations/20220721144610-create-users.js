@@ -8,10 +8,13 @@ module.exports = {
         type: DataTypes.INTEGER,
       },
       name: {
+        allowNull: false,
         type: DataTypes.TEXT,
       },
       totalScore: {
+        allowNull: false,
         type: DataTypes.INTEGER,
+        defaultValue: 0,
       },
       createdAt: {
         allowNull: false,

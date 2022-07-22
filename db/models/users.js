@@ -1,4 +1,3 @@
-
 const {
   Model
 } = require('sequelize');
@@ -14,8 +13,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Users.init({
-    name: DataTypes.TEXT,
-    totalScore: DataTypes.INTEGER
+    name: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+    },
+    totalScore: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
   }, {
     sequelize,
     modelName: 'Users',
