@@ -13,7 +13,15 @@ function Layout({ title, children }) {
         <script defer src="/js/bootstrap.bundle.min.js" />
         <title>{title}</title>
       </head>
-      <body>{children}</body>
+
+      <body>
+        <header>
+          <h1><span className="badge bg-secondary">FlashCard</span></h1>
+        </header>
+        <div className="card text-center" style={{fontStyle:"oblique"}}>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
