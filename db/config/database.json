@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "user123",
+    "password": "123456Qq",
+    "database": "database_flesh_cards",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
