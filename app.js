@@ -3,7 +3,7 @@ require('@babel/register');
 const express = require('express');
 const { sequelize } = require('./db/models');
 const homeRoutes = require('./routes/home.routes');
-const categoryRoutes = require('./routes/categories.routs');
+// const categoryRoutes = require('./routes/categories.routs');
 const config = require('./config/config');
 // const morgan = require("morgan");
 const app = express();
@@ -14,7 +14,6 @@ config(app);
 
 // Routing
 app.use('/', homeRoutes);
-app.use('/categories', categoryRoutes);
 
 // Listen
 app.listen(PORT, async () => {
