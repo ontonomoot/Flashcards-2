@@ -1,7 +1,7 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Categories({
+module.exports = function Themes({
   title, greetings, text1, text2, text3,
 }) {
   return (
@@ -12,17 +12,16 @@ module.exports = function Categories({
       </p>
       <dev>{text1}</dev>
       <form action="/input1" method="post">
-        <button type="submit">Ответ</button>
+        <button type="submit">Выбрать</button>
       </form>
       <dev>{text2}</dev>
       <form action="/input2" method="post">
-        <button type="submit">Ответ</button>
+        <button type="submit">Выбрать</button>
       </form>
       <dev>{text3}</dev>
       <form action="/input3" method="post">
-        <button type="submit">Ответ</button>
+        <button type="submit">Выбрать</button>
       </form>
-
     </Layout>
   );
 };
