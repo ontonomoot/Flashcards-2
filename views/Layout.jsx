@@ -16,9 +16,9 @@ function Layout({ title, children }) {
 
       <body>
         <header>
-          <h1><span className="badge bg-secondary">FlashCard</span></h1>
+          <h1><span className="badge bg-secondary" style={{margin:"15px 300px"}}>FlashCard</span></h1>
         </header>
-        <div className="card text-center" style={{fontStyle:"oblique"}}>
+        <div className="card text-center" style={{fontStyle:"oblique", margin:"5px 300px"}}>
           {children}
         </div>
       </body>
