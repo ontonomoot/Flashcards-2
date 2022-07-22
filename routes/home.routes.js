@@ -13,13 +13,13 @@ homeRoutes.get('/', (req, res) => {
 });
 
 homeRoutes.post('/categories', async (req, res) => {
-  // const user = req.body.player;
-  // const themes = await Categories.findAll();
-  // console.log(themes);
   const user = req.body.player;
+  const themes = await Categories.findAll({ raw: true });
+  const list = themes.map((el) => el.title)
+  // console.log(list);
 
   const main = React.createElement(Themes, {
-    title: `Твой ответ, ${user}?`, greetings: 'ТЕМЫ ДНЯ: ', text1: 'Разгрузиться:', text2: 'По фильмам', text3: 'Детские',
+    title: `Твой ответ, ${user}?`, greetings: 'ТЕМЫ ДНЯ: ', text1: `${list[0]}`, text2: `${list[1]}`, text3: `${list[2]}`,
   });
   const html = ReactDOMServer.renderToStaticMarkup(main);
   res.write('<!DOCTYPE html>');
