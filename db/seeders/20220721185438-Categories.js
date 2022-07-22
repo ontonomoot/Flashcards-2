@@ -10,17 +10,17 @@ module.exports = {
      * }], {});
     */
     await queryInterface.bulkInsert('Categories', [{
-      title: 'Garry Potter',
+      title: 'Разгрузиться',
       createdAt: new Date(),
       updatedAt: new Date(),
     }], {});
     await queryInterface.bulkInsert('Categories', [{
-      title: 'South Park',
+      title: 'По фильмам(можно не пытаться)',
       createdAt: new Date(),
       updatedAt: new Date(),
     }], {});
     await queryInterface.bulkInsert('Categories', [{
-      title: 'Flower',
+      title: 'Детские',
       createdAt: new Date(),
       updatedAt: new Date(),
     }], {});
