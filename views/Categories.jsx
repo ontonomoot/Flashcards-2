@@ -1,7 +1,7 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Hello({ title, greetings }) {
+module.exports = function Categories({ title, greetings, category }) {
   return (
     <Layout title={title}>
       <h1>{title}</h1>
@@ -9,9 +9,11 @@ module.exports = function Hello({ title, greetings }) {
         {greetings}
       </p>
       <form action="/categories" method="post">
-        <input type="text" name="player" />
-        <button type="submit">ЖМЯК!</button>
+        <dev>{category}</dev>
       </form>
+      <dev>
+          <button type="submit">Ответ</button>
+      </dev>
     </Layout>
   );
 };
