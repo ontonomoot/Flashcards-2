@@ -10,18 +10,21 @@ module.exports = function Themes({
       <p>
         {greetings}
       </p>
-      {/* <dev>{text1}</dev> */}
-      <form action="/input1" method="post">
-        <button type="submit">{text1}</button>
-      </form>
-      {/* <dev>{text2}</dev> */}
-      <form action="/input2" method="post">
-        <button type="submit">{text2}</button>
-      </form>
-      {/* <dev>{text3}</dev> */}
-      <form action="/input3" method="post">
-        <button type="submit">{text3}</button>
-      </form>
+      <dev>
+        <form action="/input1" method="post">
+          <button type="submit" className="btn btn-light">{text1}</button>
+        </form>
+      </dev>
+      <dev>
+        <form action="/input2" method="post">
+          <button type="submit" className="btn btn-light">{text2}</button>
+        </form>
+      </dev>
+      <dev>
+        <form action="/input3" method="post">
+          <button type="submit" className="btn btn-light">{text3}</button>
+        </form>
+      </dev>
     </Layout>
   );
 };
