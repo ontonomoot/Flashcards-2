@@ -1,12 +1,17 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function Hello() {
+module.exports = function Hello({ title, greetings }) {
   return (
-    <Layout>
-      <div>Hello</div>
+    <Layout title={title}>
+      <h1>{title}</h1>
+      <p>
+        {greetings}
+      </p>
+      <form action="/categories" method="post">
+        <input type="text" name="player" />
+        <button type="submit">ЖМЯК!</button>
+      </form>
     </Layout>
   );
-}
-
-module.exports = Hello;
+};
